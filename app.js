@@ -1,5 +1,4 @@
 var fs = require('fs'),
-	json2csv = require('json2csv'),
 	isJson = /^.*\.json$/,
 	watchedDirectory = '/tmp/worklog/';
 	

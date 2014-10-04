@@ -5,8 +5,5 @@
     "name": "Luke Dyson",
     "email": "git@flyinganvil.co.uk",
     "url": "http://www.flyinganvil.co.uk/"
-  },
-  "dependencies": {
-    "json2csv": "2.2.1"
   }
 }
