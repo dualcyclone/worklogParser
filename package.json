@@ -1,0 +1,12 @@
+{
+  "name": "worklogParser",
+  "description": "Small node app to parse Jira issues and worklog items into a CSV",
+  "author": {
+    "name": "Luke Dyson",
+    "email": "git@flyinganvil.co.uk",
+    "url": "http://www.flyinganvil.co.uk/"
+  },
+  "dependencies": {
+    "json2csv": "2.2.1"
+  }
+}
