@@ -17,20 +17,23 @@ fs.watch(watchedDirectory, function (event, filename) {
 			
 			issues = jsonData.issues;
 			
-			// loop over issues
-			for (var i = 0, ii = issues.length; i < ii; i++) {
-				issue = issues[i];
-				worklogs = issue.fields.worklog.worklogs;
+			// Don't do anything unless there are some issues
+			if (issues) {
+				// loop over issues
+				for (var i = 0, ii = issues.length; i < ii; i++) {
+					issue = issues[i];
+					worklogs = issue.fields.worklog.worklogs;
 				
-				for (var j = 0, jj = worklogs.length; j < jj; j++) {
-					worklog = worklogs[j];
-					csvData += issue["key"] + "," + worklog["author"]["displayName"] + "," + worklog["timeSpentSeconds"] + "," + worklog["created"] + "\n";
+					for (var j = 0, jj = worklogs.length; j < jj; j++) {
+						worklog = worklogs[j];
+						csvData += issue["key"] + "," + worklog["author"]["displayName"] + "," + worklog["timeSpentSeconds"] + "," + worklog["created"] + "\n";
+					}
 				}
-			}
 			
-			fs.writeFile(watchedDirectory + csvFilename, csvData, function() {
-				console.log('Created: ' + watchedDirectory + csvFilename);
-			});
+				fs.writeFile(watchedDirectory + csvFilename, csvData, function() {
+					console.log('Created: ' + watchedDirectory + csvFilename);
+				});
+			}
 		});
   	}
 });
